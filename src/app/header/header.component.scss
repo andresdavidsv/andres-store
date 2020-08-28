@@ -1,0 +1,8 @@
+nav {
+  a {
+    &.active {
+      background-color: blue;
+      color: white !important;
+    }
+  }
+}

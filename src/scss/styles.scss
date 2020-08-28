@@ -1,8 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
-body {
-  margin: 0px;
-  padding: 0px;
-}
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+
+// Variables
+@import "variables";
+
+//Swiper
+@import 'swiper/swiper-bundle.css';
 
 .product-grid {
   display: grid;

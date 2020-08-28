@@ -1,0 +1,16 @@
+<div>
+  <img [src]="product.image" alt="" />
+</div>
+<div>
+  <ul>
+    Nombre:{{
+      product.title
+    }}
+  </ul>
+  <ul>
+    Precio:{{
+      product.price | currency: "COP"
+    }}
+  </ul>
+  <p>{{ product.description }}</p>
+</div>

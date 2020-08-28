@@ -17,6 +17,7 @@ import { Product } from '../product.module';
 export class ProductComponent implements OnChanges, OnInit {
   @Input() product: Product;
   @Output() productClicked: EventEmitter<any> = new EventEmitter();
+  today = new Date();
   constructor() {
     console.log('constructor');
   }

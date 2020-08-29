@@ -4,11 +4,17 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 
 import { AdminGuard } from './admin.guard';
+
 const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
     children: [
+      // {
+      //   path: '',
+      //   redirectTo: '/home',
+      //   pathMatch: 'full',
+      // },
       {
         path: '',
         loadChildren: () =>
@@ -32,14 +38,19 @@ const routes: Routes = [
         loadChildren: () =>
           import('./demo/demo.module').then((m) => m.DemoModule),
       },
-      {
-        path: '**',
-        loadChildren: () =>
-          import('./page-not-found/page-not-found.module').then(
-            (m) => m.PageNotFoundModule
-          ),
-      },
     ],
+  },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin/admin.module').then((m) => m.AdminModule),
+  },
+  {
+    path: '**',
+    loadChildren: () =>
+      import('./page-not-found/page-not-found.module').then(
+        (m) => m.PageNotFoundModule
+      ),
   },
 ];
 
